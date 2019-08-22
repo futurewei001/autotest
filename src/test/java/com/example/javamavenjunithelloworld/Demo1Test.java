@@ -14,7 +14,6 @@ import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.protocol.HTTP;  
 import org.apache.http.util.EntityUtils; 
 
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class Demo1Test   
 {  
     @Test  
