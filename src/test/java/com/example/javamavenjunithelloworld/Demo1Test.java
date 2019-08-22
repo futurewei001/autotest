@@ -17,6 +17,7 @@ import org.apache.http.util.EntityUtils;
 public class Demo1Test   
 {  
     @Test  
+	@Order(1) 
     public void TestHttpConnectionToGoodBeer() throws Exception {  
         
 		CloseableHttpClient httpclient = null;  
@@ -49,7 +50,8 @@ public class Demo1Test
         }  
     }  
       
-    @Test  
+    @Test 
+	@Order(2) 	
     public void TestHttpGETValueMatch()throws Exception {  
         
 		CloseableHttpClient httpclient = null;  
