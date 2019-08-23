@@ -9,8 +9,9 @@ pipeline {
         stage('build') {
             steps {
                 sh 'mvn test'
-                sh "curl -H \"Content-Type: multipart/form-data\" -u annie.yau:technet@1234 -F \"file=@./target/surefire-reports/TEST-com.example.javamavenjunithelloworld.Demo1Test.xml\" http://13.94.39.23:8080/rest/raven/1.0/import/execution/junit?projectKey=TES"
+                 step([$class: 'XrayImportBuilder', endpointName: '/junit', fixVersion: 'v3.0', importFilePath: './target/surefire-reports/TEST-com.example.javamavenjunithelloworld.Demo1Test.xml', importToSameExecution: 'true', projectKey: 'TES', serverInstance: '68ac51bc-bfeb-4183-9bac-6916af76ca31'])
             }
+           
         }
     }
 }
